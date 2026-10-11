@@ -1,0 +1,11 @@
+# dsh-ui-tool-mode: 原生/PTC 工具呈现实时切换（持久化组合条目）。
+# 注意：此加载器的服务注入来自条目选项 inject，而非模块导出。
+- insert:
+    - id: tool-mode
+      name: dsh-ui-tool-mode
+      inject:
+        - webServer
+        - connection
+        - systemPrompt
+        - tools
+        - agents

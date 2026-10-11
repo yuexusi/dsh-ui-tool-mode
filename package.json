@@ -1,0 +1,54 @@
+{
+  "name": "dsh-ui-tool-mode",
+  "version": "0.1.0",
+  "description": "Live native/PTC tool-presentation toggle for the DSH web client: one header button flips every agent's tool mode without restarts, and a prompt section tells the model what its current mode means.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "engines": {
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "homepage": "https://github.com/yuexusi/dsh-ui-tool-mode#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuexusi/dsh-ui-tool-mode.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "ptc",
+    "tools",
+    "toggle"
+  ],
+  "license": "MIT"
+}
